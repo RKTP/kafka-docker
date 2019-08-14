@@ -8,6 +8,8 @@ services:
     build: .
     ports:
       - "9092:9092"
+    extra_hosts:
+      - "${HOSTNAME}:127.0.0.1"
     environment:
       KAFKA_ADVERTISED_HOST_NAME: ${HOSTNAME}
       KAFKA_CREATE_TOPICS: "${TOPIC}:1:1"
